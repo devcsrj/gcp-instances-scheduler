@@ -114,6 +114,12 @@ variable "function_labels" {
   description = "A set of key/value label pairs to assign to the function."
 }
 
+variable "function_runtime" {
+  type        = string
+  default     = "nodejs24"
+  description = "The runtime in which the function will be executed."
+}
+
 variable "create_cloud_build_service_account" {
   type        = bool
   description = "If the custom cloud build service account should be created."

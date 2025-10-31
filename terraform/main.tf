@@ -211,6 +211,7 @@ module "function_start_gce_instances" {
   description                   = "Function for starting Compute Engine instances"
   bucket_name                   = google_storage_bucket.default.name
   source_dir                    = "${path.module}/../functions/gce"
+  runtime                       = var.function_runtime
   location                      = var.region
   entry_point                   = "startInstances"
   pubsub_topic                  = google_pubsub_topic.start_topic.id
@@ -232,6 +233,7 @@ module "function_stop_gce_instances" {
   description                   = "Function for stopping Compute Engine instances"
   bucket_name                   = google_storage_bucket.default.name
   source_dir                    = "${path.module}/../functions/gce"
+  runtime                       = var.function_runtime
   location                      = var.region
   entry_point                   = "stopInstances"
   pubsub_topic                  = google_pubsub_topic.stop_topic.id
@@ -253,6 +255,7 @@ module "function_start_sql_instances" {
   description                   = "Function for starting Cloud SQL instances"
   bucket_name                   = google_storage_bucket.default.name
   source_dir                    = "${path.module}/../functions/sql"
+  runtime                       = var.function_runtime
   location                      = var.region
   entry_point                   = "startInstances"
   pubsub_topic                  = google_pubsub_topic.start_topic.id
@@ -274,6 +277,7 @@ module "function_stop_sql_instances" {
   description                   = "Function for stopping Cloud SQL instances"
   bucket_name                   = google_storage_bucket.default.name
   source_dir                    = "${path.module}/../functions/sql"
+  runtime                       = var.function_runtime
   location                      = var.region
   entry_point                   = "stopInstances"
   pubsub_topic                  = google_pubsub_topic.stop_topic.id
