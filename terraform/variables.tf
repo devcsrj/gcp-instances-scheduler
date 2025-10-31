@@ -108,6 +108,11 @@ variable "gke_function_config" {
   description = "The settings for start and stop GKE function."
 }
 
+variable "function_bucket" {
+  type        = string
+  description = "The bucket where to store the functions"
+}
+
 variable "function_labels" {
   type        = map(string)
   default     = {}

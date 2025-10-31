@@ -60,12 +60,8 @@ resource "google_pubsub_topic" "stop_topic" {
   message_retention_duration = var.topic_message_retention_duration
 }
 
-resource "random_id" "bucket_prefix" {
-  byte_length = 8
-}
-
 resource "google_storage_bucket" "default" {
-  name                        = "gcf-source-${random_id.bucket_prefix.hex}"
+  name                        = var.function_bucket
   project                     = var.project_id
   location                    = var.region
   uniform_bucket_level_access = true
