@@ -116,7 +116,7 @@ variable "function_labels" {
 
 variable "function_runtime" {
   type        = string
-  default     = "nodejs24"
+  default     = "nodejs22"
   description = "The runtime in which the function will be executed."
 }
 
